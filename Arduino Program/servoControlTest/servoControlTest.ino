@@ -1,29 +1,24 @@
-/*
-  Lezzetli Robot Tarifleri
-  https://lezzetlirobottarifleri.com/rc-servo-motor-arduino-ile-nasil-kullanilir
-*/
-
 #include <Servo.h>
 
 Servo sg90;
 int pos = 0;
-int pozisyon = 0;
-void setup()
-{
-  sg90.attach(9);
 
+void setup() {
+  sg90.attach(9);
 }
 
-void loop()
-{
-  for (pos = 0; pos <= 180; pos += 1)
-  {
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) {
     sg90.write(pos);
     delay(15);
   }
-  for (pos = 180; pos >= 0; pos -= 1)
-  {
+
+  delay(1000); // Pause for a second
+
+  for (pos = 180; pos >= 0; pos -= 1) {
     sg90.write(pos);
     delay(15);
   }
+
+  delay(1000); // Pause for a second
 }
